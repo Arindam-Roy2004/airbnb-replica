@@ -3,42 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>airbnb Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="/css/custom.css">
+    <title>Airbnb Home</title>
+    <link rel="stylesheet" href="/output.css">
   </head>
-  <body class="bg-gradient-to-br from-pink-50 to-red-50">
-    <header class="bg-white shadow-md">
-      <nav class="container mx-auto px-6 py-4">
-        <h1 class="text-3xl font-bold text-pink-600">Welcome to Airbnb</h1>
+  <body class="animate-fade-in">
+    <header class="nav-header">
+      <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 class="text-3xl font-bold text-pink-600">🏠 Airbnb</h1>
+        <a href="/host/add_home" class="text-pink-600 hover:text-pink-700 font-medium">Become a Host</a>
       </nav>
     </header>
     <main class="container mx-auto px-6 py-12">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold text-gray-800 mb-6">Find Your Perfect Stay</h2>
-        <p class="text-lg text-gray-600 mb-8">Discover amazing homes and experiences around the world</p>
-        <a href="/host/add_home" 
-           class="inline-block bg-pink-600 hover:bg-pink-700 text-white font-semibold px-8 py-4 rounded-lg shadow-lg transform transition hover:scale-105">
-          Become a Host - Add Your Home
+      <div class="max-w-4xl mx-auto text-center animate-slide-up">
+        <h2 class="text-5xl font-bold text-gray-800 mb-6">Find Your Perfect Stay</h2>
+        <p class="text-xl text-gray-600 mb-10">Discover amazing homes and experiences around the world</p>
+        <a href="/host/add_home" class="btn-primary">
+          ✨ Become a Host - Add Your Home
         </a>
       </div>
-      <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="text-4xl mb-4">🏠</div>
-          <h3 class="text-xl font-semibold mb-2">Unique Homes</h3>
+      
+      <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card">
+          <div class="text-5xl mb-4">🏠</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Unique Homes</h3>
           <p class="text-gray-600">Stay in unique spaces you won't find anywhere else</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="text-4xl mb-4">💰</div>
-          <h3 class="text-xl font-semibold mb-2">Best Prices</h3>
+        <div class="card">
+          <div class="text-5xl mb-4">💰</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Best Prices</h3>
           <p class="text-gray-600">Find great deals on amazing properties</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-md">
-          <div class="text-4xl mb-4">⭐</div>
-          <h3 class="text-xl font-semibold mb-2">Trusted Hosts</h3>
+        <div class="card">
+          <div class="text-5xl mb-4">⭐</div>
+          <h3 class="text-xl font-semibold mb-3 text-gray-800">Trusted Hosts</h3>
           <p class="text-gray-600">Connect with verified and reliable hosts</p>
         </div>
       </div>
+      
+      <div class="mt-20 bg-white rounded-2xl shadow-xl p-12 max-w-3xl mx-auto">
+        <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Why Choose Airbnb?</h3>
+        <ul class="space-y-4">
+          <li class="flex items-start">
+            <span class="text-2xl mr-4">✓</span>
+            <div>
+              <h4 class="font-semibold text-lg text-gray-800">Verified Properties</h4>
+              <p class="text-gray-600">All homes are verified for quality and safety</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-2xl mr-4">✓</span>
+            <div>
+              <h4 class="font-semibold text-lg text-gray-800">24/7 Support</h4>
+              <p class="text-gray-600">We're here to help anytime you need us</p>
+            </div>
+          </li>
+          <li class="flex items-start">
+            <span class="text-2xl mr-4">✓</span>
+            <div>
+              <h4 class="font-semibold text-lg text-gray-800">Flexible Cancellation</h4>
+              <p class="text-gray-600">Cancel or modify your booking with ease</p>
+            </div>
+          </li>
+        </ul>
+      </div>
     </main>
+    
+    <footer class="bg-gray-800 text-white mt-20 py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>&copy; 2025 Airbnb. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>
