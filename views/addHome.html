@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Home to airbnb</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/custom.css">
+  </head>
+  <body class="bg-gradient-to-br from-pink-50 to-red-50">
+    <header class="bg-white shadow-md">
+      <nav class="container mx-auto px-6 py-4">
+        <h1 class="text-3xl font-bold text-pink-600">Airbnb</h1>
+      </nav>
+    </header>
+    <main class="container mx-auto px-6 py-12">
+      <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
+        <h2 class="text-3xl font-bold text-gray-800 mb-2">Register Your Home</h2>
+        <p class="text-gray-600 mb-8">Start hosting and earn extra income by listing your property</p>
+        
+        <form action="/host/add_home" method="POST" class="space-y-6">
+          <div>
+            <label for="houseName" class="block text-sm font-medium text-gray-700 mb-2">
+              Property Name
+            </label>
+            <input
+              type="text"
+              id="houseName"
+              name="houseName"
+              placeholder="e.g., Cozy Downtown Apartment"
+              required
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-pink-500 focus:border-transparent outline-none transition"
+            />
+          </div>
+          
+          <div class="flex gap-4">
+            <button 
+              type="submit" 
+              class="flex-1 bg-pink-600 hover:bg-pink-700 text-white font-semibold px-6 py-3 rounded-lg shadow-md transform transition hover:scale-105">
+              Register Property
+            </button>
+            <a 
+              href="/" 
+              class="flex-1 text-center bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold px-6 py-3 rounded-lg transition">
+              Cancel
+            </a>
+          </div>
+        </form>
+        
+        <div class="mt-8 p-4 bg-blue-50 rounded-lg">
+          <h3 class="font-semibold text-blue-900 mb-2">Why Host with Us?</h3>
+          <ul class="text-sm text-blue-800 space-y-1">
+            <li>✓ Millions of guests worldwide</li>
+            <li>✓ Secure payment system</li>
+            <li>✓ 24/7 host support</li>
+            <li>✓ Free cancellation protection</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
