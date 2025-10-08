@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found</title>
-  <link rel="stylesheet" href="/output.css">
-</head>
-<body class="flex items-center justify-center min-h-screen animate-fade-in">
+<%- include('partials/header', { title: 'Page Not Found' }) %>
+
+<div class="flex items-center justify-center min-h-screen">
   <div class="max-w-2xl mx-auto text-center px-6">
     <div class="bg-white rounded-3xl shadow-2xl p-12 animate-slide-up">
       <div class="mb-6">
@@ -51,5 +45,6 @@
       </div>
     </div>
   </div>
-</body>
-</html>
+</div>
+
+<%- include('partials/footer') %>

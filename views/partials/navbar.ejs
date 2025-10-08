@@ -1,0 +1,13 @@
+<header class="nav-header">
+  <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <a href="/" class="text-3xl font-bold text-pink-600 hover:text-pink-700 transition-colors">🏠 Airbnb</a>
+    <div class="flex gap-6 items-center">
+      <a href="/" class="nav-link <%= currPage === 'home' ? 'active' : '' %>">
+        Home
+      </a>
+      <a href="/host/add_home" class="nav-link <%= currPage === 'add_home' ? 'active' : '' %>">
+        Become a Host
+      </a>
+    </div>
+  </nav>
+</header>

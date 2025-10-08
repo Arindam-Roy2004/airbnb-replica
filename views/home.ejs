@@ -1,0 +1,82 @@
+<%- include('partials/header', { title: 'Airbnb Home' }) %>
+<%- include('partials/navbar', { currPage: currPage }) %>
+
+<main class="container mx-auto px-6 py-12">
+  <div class="max-w-4xl mx-auto text-center animate-slide-up">
+    <h2 class="text-5xl font-bold text-gray-800 mb-6">Find Your Perfect Stay</h2>
+    <p class="text-xl text-gray-600 mb-10">Discover amazing homes and experiences around the world</p>
+    <a href="/host/add_home" class="btn-primary">
+      ✨ Become a Host - Add Your Home
+    </a>
+  </div>
+  
+  <% if (homes && homes.length > 0) { %>
+    <div class="mt-20">
+      <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">Available Properties</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <% homes.forEach(home => { %>
+          <div class="card">
+            <h4 class="text-xl font-semibold mb-2 text-gray-800"><%= home.houseName %></h4>
+            <p class="text-gray-600 mb-2">📍 <%= home.location %></p>
+            <p class="text-gray-600 mb-3"><%= home.description %></p>
+            <div class="flex justify-between items-center border-t pt-3 mt-3">
+              <span class="text-2xl font-bold text-pink-600">$<%= home.price %></span>
+              <span class="text-sm text-gray-500">per night</span>
+            </div>
+            <div class="flex gap-4 mt-3 text-sm text-gray-600">
+              <span>🛏️ <%= home.bedrooms %> beds</span>
+              <span>🚿 <%= home.bathrooms %> baths</span>
+            </div>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  <% } %>
+  
+  <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="card">
+      <div class="text-5xl mb-4">🏠</div>
+      <h3 class="text-xl font-semibold mb-3 text-gray-800">Unique Homes</h3>
+      <p class="text-gray-600">Stay in unique spaces you won't find anywhere else</p>
+    </div>
+    <div class="card">
+      <div class="text-5xl mb-4">💰</div>
+      <h3 class="text-xl font-semibold mb-3 text-gray-800">Best Prices</h3>
+      <p class="text-gray-600">Find great deals on amazing properties</p>
+    </div>
+    <div class="card">
+      <div class="text-5xl mb-4">⭐</div>
+      <h3 class="text-xl font-semibold mb-3 text-gray-800">Trusted Hosts</h3>
+      <p class="text-gray-600">Connect with verified and reliable hosts</p>
+    </div>
+  </div>
+  
+  <div class="mt-20 bg-white rounded-2xl shadow-xl p-12 max-w-3xl mx-auto">
+    <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">Why Choose Airbnb?</h3>
+    <ul class="space-y-4">
+      <li class="flex items-start">
+        <span class="text-2xl mr-4">✓</span>
+        <div>
+          <h4 class="font-semibold text-lg text-gray-800">Verified Properties</h4>
+          <p class="text-gray-600">All homes are verified for quality and safety</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <span class="text-2xl mr-4">✓</span>
+        <div>
+          <h4 class="font-semibold text-lg text-gray-800">24/7 Support</h4>
+          <p class="text-gray-600">We're here to help anytime you need us</p>
+        </div>
+      </li>
+      <li class="flex items-start">
+        <span class="text-2xl mr-4">✓</span>
+        <div>
+          <h4 class="font-semibold text-lg text-gray-800">Flexible Cancellation</h4>
+          <p class="text-gray-600">Cancel or modify your booking with ease</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<%- include('partials/footer') %>

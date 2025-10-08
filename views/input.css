@@ -51,3 +51,17 @@
 @utility nav-header {
   @apply bg-white shadow-md sticky top-0 z-50;
 }
+
+@utility nav-link {
+  @apply text-gray-600 hover:text-pink-600 font-medium transition-colors duration-200 relative pb-1;
+}
+
+/* Active navigation link style */
+.nav-link.active {
+  @apply text-pink-600 font-semibold;
+}
+
+.nav-link.active::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-pink-600;
+}
