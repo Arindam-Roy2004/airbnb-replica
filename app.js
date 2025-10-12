@@ -6,6 +6,7 @@ const userRouter = require('./routes/userRouter');
 const {hostRouter} = require('./routes/hostRouter');
 const rootDir = require('./utils/pathUtils');
 const path = require('path');
+const { pageNotfound } = require('./controllers/errors');
 
 // Serve static files from public folder
 app.use(express.static(path.join(rootDir, 'public')));
@@ -18,9 +19,7 @@ app.set('views','views');
 
 app.use(userRouter);
 app.use("/host",hostRouter);
-app.use((req,res,next)=>{
-  res.status(404).render('404');
-})
+app.use(pageNotfound);
 
 const PORT = 3001;
 app.listen(PORT,()=>{

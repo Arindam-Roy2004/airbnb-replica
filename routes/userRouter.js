@@ -1,15 +1,12 @@
 const express = require('express');
 
 const userRouter = express.Router();
-const { registerHomes } = require('./hostRouter');
 
-const path = require('path');
-const rootDir = require('../utils/pathUtils');
+// const path = require('path');
+// const rootDir = require('../utils/pathUtils');
+const { registerHomes } = require('../controllers/homes');
+const {getHomes} = require('../controllers/homes');
 
-userRouter.get("/",(req,res,next)=>{
-  console.log("In user router");
-  console.log(registerHomes);
-  res.render('home', { homes: registerHomes, currPage: 'home' });
-})
+userRouter.get("/", getHomes);
 
 module.exports = userRouter;
