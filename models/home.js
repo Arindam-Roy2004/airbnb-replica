@@ -1,9 +1,9 @@
 const fs = require('fs');
 const path = require('path');
 const rootDir = require('../utils/pathUtils');
-const registerHomes = [];
+// const registerHomes = [];
 module.exports = class Home {
-  constructor(houseName,location,description,price,bedrooms,bathrooms){
+  constructor(houseName, location, description, price, bedrooms, bathrooms) {
     this.houseName = houseName;
     this.location = location;
     this.description = description;
@@ -12,27 +12,36 @@ module.exports = class Home {
     this.bathrooms = bathrooms;
   }
 
-  save(){
+  save() {
     console.log("In save method");
     console.log(this);
-    registerHomes.push(this);
-    const homeDataPath = path.join(rootDir,'data','homes.json');
-    fs.writeFile(homeDataPath, JSON.stringify(registerHomes), (err)=>{
-      console.log(err);
+    Home.fetchAll((registerHomes) => {
+      registerHomes.push(this);
+      const homeDataPath = path.join(rootDir, 'data', 'homes.json');
+      fs.writeFile(homeDataPath, JSON.stringify(registerHomes), (err) => {
+        console.log(err);
+      });
     });
+
+    // registerHomes.push(this);
+    // const homeDataPath = path.join(rootDir,'data','homes.json');
+    // fs.writeFile(homeDataPath, JSON.stringify(registerHomes), (err)=>{
+    //   console.log(err);
+    // });
   }
 
-  static fetchAll(){
+  static fetchAll(callback) {
     console.log("In fetch all method");
-    const homesDataPath = path.join(rootDir,'data','homes.json');
+    const homesDataPath = path.join(rootDir, 'data', 'homes.json');
 
-    try {
-      const data = fs.readFileSync(homesDataPath, 'utf8');
-      return JSON.parse(data);
-    } catch (err) {
-      console.log('Error reading file:', err.message);
-      return [];
-    }
+    fs.readFile(homesDataPath, (err, data) => {
+      console.log('File read', (err, data));
+      if (!err) {
+        callback(JSON.parse(data));
+      } else {
+        callback([]);
+      }
+    });
     // return JSON.parse(homesData);
   }
 

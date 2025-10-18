@@ -14,9 +14,10 @@ exports.postAddHome = (req,res,next)=>{
 };
 
 exports.getHomes = (req,res,next)=>{
-  const registerHomes = Home.fetchAll();
+  Home.fetchAll((registerHomes)=>{
+    res.render('home', { homes: registerHomes, currPage: 'home' });
+  });
   console.log("In user router");
   // console.log(registerHomes);
-  res.render('home', { homes: registerHomes, currPage: 'home' });
 };
 
